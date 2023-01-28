@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Start a flask application
-Your web application must be listening on 0.0.0.0, port 5001
+Your web application must be listening on 0.0.0.0, port 5000
 Routes:
     /1-hbnb/: display a HTML page: (inside the tag BODY)
 """
@@ -29,4 +29,4 @@ def teardown(exc):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001)
+    app.run(host="0.0.0.0", port=5000)
