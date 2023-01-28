@@ -9,7 +9,9 @@ from flask import Flask, render_template, url_for
 from models import storage
 import uuid
 
+
 app = Flask(__name__)
+port = 5000
 
 
 @app.route('/1-hbnb/', strict_slashes=False)
@@ -19,7 +21,10 @@ def hbnb():
     amenities = storage.all("Amenity")
     places = storage.all("Place")
     return render_template("1-hbnb.html",
-                           states=states, amenities=amenities, places=places, cache_id=str(uuid.uuid4()))
+                           states=states,
+                           amenities=amenities,
+                           places=places,
+                           cache_id=str(uuid.uuid4()))
 
 
 @app.teardown_appcontext
@@ -29,4 +34,4 @@ def teardown(exc):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=port)
