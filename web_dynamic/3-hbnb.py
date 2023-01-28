@@ -3,7 +3,7 @@
 Start a flask application
 Your web application must be listening on 0.0.0.0, port 5000
 Routes:
-    /2-hbnb/: display a HTML page: (inside the tag BODY)
+    /3-hbnb/: display a HTML page: (inside the tag BODY)
 """
 from flask import Flask, render_template, url_for
 from models import storage
@@ -14,13 +14,13 @@ app = Flask(__name__)
 port = 5000
 
 
-@app.route('/2-hbnb/', strict_slashes=False)
+@app.route('/3-hbnb/', strict_slashes=False)
 def hbnb():
     """Displays state data"""
     states = storage.all("State")
     amenities = storage.all("Amenity")
     places = storage.all("Place")
-    return render_template("2-hbnb.html",
+    return render_template("3-hbnb.html",
                            states=states,
                            amenities=amenities,
                            places=places,
